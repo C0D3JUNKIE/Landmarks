@@ -38,7 +38,7 @@ struct CategoryRow_Previews: PreviewProvider {
     static var landmarks = ModelData().landmarks
     static var previews: some View {
         CategoryRow(
-            categoryName: landmarks[0].category.rawValue, items: Array(landmarks.prefix(3))
+            categoryName: landmarks[0].category.rawValue, items: Array(landmarks.prefix(4))
         )
     }
 }

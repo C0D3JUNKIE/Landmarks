@@ -25,7 +25,7 @@ struct HikeGraph: View {
     }
 
     var body: some View {
-        let data = hike.observation
+        let data = hike.observations
         let overallRange = rangeOfRanges(data.lazy.map { $0[keyPath: path] })
         let maxMagnitude = data.map { magnitude(of: $0[keyPath: path]) }.max()!
         let heightRatio = 1 - CGFloat(maxMagnitude / magnitude(of: overallRange))
