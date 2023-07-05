@@ -18,7 +18,7 @@ struct LandmarkDetail: View {
         ScrollView{
             VStack{
                 CircleImage(image: landmark.image.resizable())
-                    .scaledToFill()
+                    .scaledToFit()
                 Text(landmark.name)
                     .font(.headline)
                     .lineLimit(0)
@@ -32,9 +32,13 @@ struct LandmarkDetail: View {
                     .lineLimit(0)
                 Text(landmark.state)
                     .font(.caption)
+                Divider()
+                MapView(coordinate: landmark.locationCoordinate)
+                    .scaledToFit()
             }
+            .padding(16)
         }
-
+        .navigationTitle("Landmarks")
     }
 }
 
